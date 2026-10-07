@@ -1,122 +1,150 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
+
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const tracks = [
+    "Track 1",
+    "Track 2",
+    "Track 3",
+    "Track 4",
+    "Track 5",
+    "Track 6",
+    "Track 7",
+    "Track 8",
+    "Track 9",
+    "Track 10",
+  ];
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="screen">
 
-      <div className="ticks"></div>
+      <div className="app">
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+        {/* ================= HEADER ================= */}
+        <header className="header">
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+          <button className="back-button">
+            ◀
+          </button>
+
+          <span className="header-title">
+            ALBUM TRACKS
+          </span>
+
+          <button className="menu-button">
+            ☰
+          </button>
+
+        </header>
+
+
+        {/* ================= ALBUM TITLE ================= */}
+        <section className="album-title">
+
+          <h1>912 Album</h1>
+
+          <p>Lorem f. Ipsum</p>
+
+        </section>
+
+
+        {/* ================= ALBUM COVER ================= */}
+        <section className="album-area">
+
+          {/* CD */}
+          <div className="cd">
+            <div className="cd-hole"></div>
+          </div>
+
+          {/* YOUR ALBUM PHOTO */}
+          <img
+            src="/album.jpg"
+            alt="Nirvana Album"
+            className="album-photo"
+          />
+
+        </section>
+
+
+        {/* ================= DIVIDER ================= */}
+        <div className="divider"></div>
+
+
+        {/* ================= TRACK LIST ================= */}
+        <main className="tracks">
+
+          {tracks.map((track, index) => (
+
+            <div className="track" key={index}>
+
+              <div className="track-info">
+
+                <strong>
+                  {track}
+                </strong>
+
+                <span>
+                  Lorem f. Ipsum
+                </span>
+
+              </div>
+
+
+              <div className="track-icons">
+
+                <button>
+                  ☆
+                </button>
+
+                <button>
+                  ⊘
+                </button>
+
+                <button>
+                  ☰
+                </button>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </main>
+
+
+        {/* ================= MUSIC PLAYER ================= */}
+        <div className="player">
+
+          <div className="player-line">
+            <div className="player-dot"></div>
+          </div>
+
+        </div>
+
+
+        {/* ================= BOTTOM NAVIGATION ================= */}
+        <footer className="bottom-nav">
+
+          <button>
+            ◀
+          </button>
+
+          <button className="home-button">
+            ◆
+          </button>
+
+          <button>
+            ☑
+          </button>
+
+        </footer>
+
+      </div>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
