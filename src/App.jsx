@@ -1,4 +1,4 @@
-import "./App.css";
+import './style.css'
 
 
 
@@ -20,8 +20,6 @@ function App() {
     <div className="screen">
 
       <div className="app">
-
-        {/* ================= HEADER ================= */}
         <header className="header">
 
           <button className="back-button">
@@ -38,8 +36,6 @@ function App() {
 
         </header>
 
-
-        {/* ================= ALBUM TITLE ================= */}
         <section className="album-title">
 
           <h1>912 Album</h1>
@@ -49,7 +45,6 @@ function App() {
         </section>
 
 
-        {/* ================= ALBUM COVER ================= */}
         <section className="album-area">
 
           {/* CD */}
@@ -66,12 +61,8 @@ function App() {
 
         </section>
 
-
-        {/* ================= DIVIDER ================= */}
         <div className="divider"></div>
 
-
-        {/* ================= TRACK LIST ================= */}
         <main className="tracks">
 
           {tracks.map((track, index) => (
@@ -113,8 +104,6 @@ function App() {
 
         </main>
 
-
-        {/* ================= MUSIC PLAYER ================= */}
         <div className="player">
 
           <div className="player-line">
@@ -124,7 +113,6 @@ function App() {
         </div>
 
 
-        {/* ================= BOTTOM NAVIGATION ================= */}
         <footer className="bottom-nav">
 
           <button>
